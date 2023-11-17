@@ -8,4 +8,10 @@ if (file_exists($file)) {
     fclose($handler);
     echo $contents;
 }
+else{
+    $handler = fopen($file,'w');
+    $contents = 'brad'. PHP_EOL . 'admin' . PHP_EOL . 'john';
+    fwrite($handler, $contents);
+    fclose($handler);
+}
 ?>
