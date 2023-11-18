@@ -8,7 +8,7 @@ if (isset($_POST["submit"])) {
         $file_tmp = $_FILES['upload']['tmp_name'];
         $file_format = explode('.', $file_name);
         $file_format = end($file_format);
-        $target_dir = '/uploads/${file_name}';
+        $target_dir = 'uploads/' . $file_name;
 
         echo $file_tmp;
 
