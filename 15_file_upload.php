@@ -8,14 +8,14 @@ if (isset($_POST["submit"])) {
         $file_tmp = $_FILES['upload']['tmp_name'];
         $file_format = explode('.', $file_name);
         $file_format = end($file_format);
-        $target_dir = 'uploads/${file_name}';
+        $target_dir = '/uploads/${file_name}';
 
         echo $file_tmp;
 
         if (!in_array($file_format, $allowed_formats)) {
             echo 'File Format Not Supported';
         } else {
-            // move_uploaded_file($file_tmp, $target_dir);
+            move_uploaded_file($file_tmp, $target_dir);
             echo '<p style="color: green;">File uploaded!</p>';
         }
     } else {
